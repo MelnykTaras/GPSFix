@@ -45,9 +45,9 @@
 
 - (void)setup
 {
-    pointsCounter = 0;
     locationManager = [[LocationManager alloc] initWithLocationManagerDelegate:self];
     [locationManager start];
+    locations = [locationManager locations];
 }
 
 #pragma mark - LocationManagerDelegate
@@ -72,7 +72,6 @@
     labelType.backgroundColor = [UIColor colorByTypeFromLocation:location];
     labelReferenceFrame.backgroundColor = [UIColor colorByReferenceFrameFromLocation:location];
     
-    locations = [locationManager locations];
     [locationsTableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
