@@ -10,8 +10,6 @@
 #import "LocationManagerDelegate.h"
 #import "LocationsDataSource.h"
 
-@class CLLocation;
-
 @interface LocationManager : NSObject <LocationsDataSource>
 
 - (instancetype)initWithLocationManagerDelegate:(id<LocationManagerDelegate>)delegate;
